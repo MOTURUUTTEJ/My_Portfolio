@@ -2154,3 +2154,93 @@ textarea.form-input::-webkit-resizer {
   }
 
 }
+
+
+/*-----------------------------------*\
+  #CERTIFICATES GRID FORMAT
+\*-----------------------------------*/
+
+/* Override the horizontal-scroll strip with a proper grid */
+.clients-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  /* remove the scroll-strip styles */
+  overflow-x: unset;
+  flex-direction: unset;
+  margin: 0;
+  padding: 0;
+  scroll-snap-type: unset;
+  overscroll-behavior-inline: unset;
+  scroll-padding-inline: unset;
+}
+
+.clients-item {
+  min-width: unset;
+  scroll-snap-align: unset;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--border-gradient-onyx);
+  border: 1px solid var(--jet);
+  box-shadow: var(--shadow-2);
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.clients-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.clients-item a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  padding: 8px;
+}
+
+.clients-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+  filter: grayscale(0);
+  /* show full colour */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: block;
+}
+
+.clients-item:hover {
+  border-color: var(--orange-yellow-crayola);
+  box-shadow: var(--shadow-3);
+  transform: translateY(-3px);
+}
+
+.clients-item:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0) brightness(1.05);
+}
+
+/* 3-column on wider screens */
+@media (min-width: 580px) {
+  .clients-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .clients-item img {
+    height: 160px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .clients-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
