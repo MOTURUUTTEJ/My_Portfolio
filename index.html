@@ -11,16 +11,36 @@
   <!-- favicon -->
   <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
 
-  <!-- custom css link -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- google font link -->
+  <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-ring"></div>
+    <span class="loader-text">Initializing...</span>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Animated BG Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
 
   <main>
 
@@ -28,12 +48,14 @@
     <aside class="sidebar" data-sidebar>
       <div class="sidebar-info">
         <figure class="avatar-box">
+          <div class="avatar-ring"></div>
           <img src="images/my-avatar.png" alt="Uttej Moturu" width="80" />
+          <div class="status-badge"><span></span> Available</div>
         </figure>
 
         <div class="info-content">
           <h1 class="name" title="Uttej Moturu">Uttej Moturu</h1>
-          <p class="title">Software Engineer</p>
+          <p class="title"><span class="typing-text" id="typingText"></span><span class="cursor-blink">|</span></p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -784,15 +806,31 @@
       </article>
 
     </div>
-  </main>
+    </main>
 
-  <!-- custom js link -->
-  <script src="script.js"></script>
-
-  <!-- ionicons -->
+  <!-- Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-</body>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+
+  <!-- VanillaTilt.js -->
+  <script src="https://unpkg.com/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+
+</body>
 </html>
