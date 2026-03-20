@@ -1142,6 +1142,16 @@ main {
   font-weight: var(--fw-300);
 }
 
+.project-guide {
+  color: var(--vegas-gold);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  font-style: italic;
+  margin-left: 10px;
+  margin-top: 4px;
+  opacity: 0.85;
+}
+
 
 
 
